@@ -19,13 +19,10 @@ On a client terminal, the possible commands are the following:
 
 ### **ADD** `<description> <location> <price>`  
 - Adds a new advertisement characterized by the given arguments:  
-  - **description**: A short text describing the ad.  
-  - **location**: The location where the ad is relevant.  
-  - **price**: A valid integer value representing the price.  
 - **Important:**  
   - Arguments must be separated by spaces.  
-  - Arguments **cannot** contain spaces.  
-  - `price` must be a valid integer.  
+  - Arguments **cannot** contain spaces (short, one word description and location for easy and quick testing).  
+  - `price` must be a valid integer value.  
 
 ### **GET-ALL**  
 - Displays all available ads.  
@@ -185,9 +182,3 @@ __default__ - Send to the client an "Invalid command" message.
 __4. Close the resources__
 - If the client exits and closes its socket, a null will be transmitted. This will lead to the finally block to be executed, where all resources are closed (in, out and clientSocket will also be closed on the server side)
 - If the client is forcibly ended (by pressing ctrl+C in the client terminal), an IOException will be caught and handled in the catch block
-
-
-## **Possible improvements**
-- Make the app easy to use.
-- Parse client inputs based on a different criteria, not a space, to allow the user to put spaces in the fields description or location.
-- More checks on the input arguments to be better prepared if the user mistakes when writing the inputs.
