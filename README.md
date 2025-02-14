@@ -102,7 +102,7 @@ while (!"EXIT".equals(line)) {
 
 
 ## *Server*
-Idea: Store all ads into an ArrayList<Ad> where Ad is a helper class which describes an advertisement, containing the fields description, location and price.
+Idea: Store all ads into an ArrayList of Ad elements where Ad is a helper class which describes an advertisement, containing the fields description, location and price.
 
 ---
 
