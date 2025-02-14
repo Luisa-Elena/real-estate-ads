@@ -10,18 +10,29 @@ Multithreaded Java server, which supports multiple clients to view all ads, sear
 3. compile?
 4. run server and client, server first
 
-## **Usage**
-On a client termianl, the possible commands are the following:  
-__EXIT__  
-  - to close the connection with the server.  
-__ADD__ <description> <location> <price>  
-  - to add a new advertisment characterized by the given arguments (description, location and price)
-  - the arguments must be separated by spaces, but cannot contain spaces
-  - price must be a valid integer value  
-__GET-ALL__  
-  - to view all ads  
-__GET-BY-ID__ <index>  
-- to get a specific ad from the list, located at the index specified as argument
+## **Usage**  
+
+On a client terminal, the possible commands are the following:  
+
+### **EXIT**  
+- Closes the connection with the server.  
+
+### **ADD** `<description> <location> <price>`  
+- Adds a new advertisement characterized by the given arguments:  
+  - **description**: A short text describing the ad.  
+  - **location**: The location where the ad is relevant.  
+  - **price**: A valid integer value representing the price.  
+- **Important:**  
+  - Arguments must be separated by spaces.  
+  - Arguments **cannot** contain spaces.  
+  - `price` must be a valid integer.  
+
+### **GET-ALL**  
+- Displays all available ads.  
+
+### **GET-BY-ID** `<index>`  
+- Retrieves a specific ad from the list at the given index.  
+
 
 ## **Implementation details**
 ## *Main idea*
