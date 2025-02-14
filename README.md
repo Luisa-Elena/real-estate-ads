@@ -44,9 +44,9 @@ On a client terminal, the possible commands are the following:
 1. Connect to the server
 2. Set up the input and output streams for data exchange with the server
 3. In a loop:
-  - read data from the user
-  - send it to the server
-  - receive the server's response.
+    - read data from the user
+    - send it to the server
+    - receive the server's response.
 
 ### Step 1
 ```java
