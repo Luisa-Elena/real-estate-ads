@@ -14,20 +14,20 @@ Multithreaded Java server, which supports multiple clients to view all ads, sear
 
 On a client terminal, the possible commands are the following:  
 
-### **EXIT**  
+#### **EXIT**  
 - Closes the connection with the server.  
 
-### **ADD** `<description> <location> <price>`  
+#### **ADD** `<description> <location> <price>`  
 - Adds a new advertisement characterized by the given arguments:  
 - **Important:**  
   - Arguments must be separated by spaces.  
   - Arguments **cannot** contain spaces (short, one word description and location for easy and quick testing).  
   - `price` must be a valid integer value.  
 
-### **GET-ALL**  
+#### **GET-ALL**  
 - Displays all available ads.  
 
-### **GET-BY-ID** `<index>`  
+#### **GET-BY-ID** `<index>`  
 - Retrieves a specific ad from the list at the given index.  
 
 
