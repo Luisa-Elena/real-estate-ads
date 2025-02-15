@@ -19,7 +19,6 @@ class ClientHandler implements Runnable {
         BufferedReader in = null;
         try {
             out = new PrintWriter(clientSocket.getOutputStream(), true);
-
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
             String line;

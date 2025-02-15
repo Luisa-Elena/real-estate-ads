@@ -11,17 +11,12 @@ class Client {
         try (Socket socket = new Socket("localhost", 1234)) {
 
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
             Scanner sc = new Scanner(System.in);
 
             String line = null;
-
             while (true) {
-
                 line = sc.nextLine();
-
                 out.println(line);
 
                 if("EXIT".equals(line)) {
