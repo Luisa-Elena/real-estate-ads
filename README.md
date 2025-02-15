@@ -201,7 +201,7 @@ while ((line = in.readLine()) != null) {
 
 __3. Implement the logic for each command case:__  
 __EXIT__ - Print a message to inform that the client has disconnected.  
-__ADD__ - Construct a new Ad object with the arguments and add it to the ads list. Since ads is ArrayList<Ad> it is not thread safe, so a ReentrantLock is used to ensure only one thread can add a new element to the list. Only one thread can execute the critical section at a time. The critical section is between lock.lock() (thread aquires the lock) and lock.unlock() (thread releases the lock; this is placed inside a finally block to prevent deadlocks)  
+__ADD__ - Construct a new Ad object with the arguments and add it to the list of ads.
 __GET-BY-ID__ - Get the ad at a specific index specified as argument for this command.  
 __GET-ALL__ - Get all ads from the list.  
 __default__ - Send to the client an "Invalid command" message.
