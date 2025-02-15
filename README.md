@@ -55,7 +55,8 @@ On a client terminal, the possible commands are the following:
 - Displays all available ads.  
 
 #### **GET-BY-ID** `<index>`  
-- Retrieves a specific ad from the list at the given index.  
+- Retrieves a specific ad from the list at the given index.
+- Indexing starts from 0.
 
 
 ## **Implementation details**
@@ -212,3 +213,7 @@ __default__ - Send to the client an "Invalid command" message.
 __4. Close the resources__
 - If the client exits and closes its socket, a null will be transmitted. This will lead to the finally block to be executed, where all resources are closed (in, out and clientSocket will also be closed on the server side)
 - If the client is forcibly ended (by pressing ctrl+C in the client terminal), an IOException will be caught and handled in the catch block
+
+
+
+## **Usage example**
