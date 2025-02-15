@@ -102,7 +102,7 @@ while (!"EXIT".equals(line)) {
 
 
 ## *Server*
-Idea: Store all ads into an ArrayList of Ad elements where Ad is a helper class which describes an advertisement, containing the fields description, location and price.
+Idea: Store all ads into a ConcurrentHashMap (because it is a thread-safe collection) where the key is the index of an advertisement in the list and the value is the actual Ad object. Ad is a helper class which describes an advertisement, containing the fields description, location and price.
 
 ---
 
@@ -137,7 +137,7 @@ while (true) {
 
 ### Step 3
 ```java
-private static class ClientHandler implements Runnable {
+class ClientHandler implements Runnable {
     private final Socket clientSocket;
     public ClientHandler(Socket socket) {
         this.clientSocket = socket;
