@@ -31,7 +31,7 @@ javac -d bin src/main/java/org/example/*.java
 ```sh
 java -cp bin org.example.Server
 ```  
-Then the clients:
+Then run the clients:
 ```sh
 java -cp bin org.example.Client
 ```
