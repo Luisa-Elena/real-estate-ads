@@ -15,24 +15,25 @@ cd path/to/your/directory
 ```sh
 git clone "https://github.com/Luisa-Elena/real-estate-ads.git"
 ```
-3. Navigate to the folder "java"
+3. Navigate to the cloned folder "real-estate-ads"
 ```sh
-cd real-estate-ads/src/main/java
+cd real-estate-ads
 ```
-4. Compile the Server class:
+4. Make a directory called "bin" to store compiled classes 
 ```sh
-javac -d . org/example/Server.java
+mkdir -p bin
 ```
-5. Compile the Client class
+5. Compile all java files
 ```sh
-javac -d . org/example/Client.java
+javac -d bin src/main/java/org/example/*.java
 ```
-6. Run the server first, then the clients, each in a separate terminal window, still from the "java" folder:
+6. Run the server first:
 ```sh
-java org.example.Server
+java -cp bin org.example.Server
 ```  
+Then the clients:
 ```sh
-java org.example.Client
+java -cp bin org.example.Client
 ```
 
 
