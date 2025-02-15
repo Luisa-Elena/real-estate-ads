@@ -18,11 +18,15 @@ class Client {
 
             String line = null;
 
-            while (!"EXIT".equals(line)) {
+            while (true) {
 
                 line = sc.nextLine();
 
                 out.println(line);
+
+                if("EXIT".equals(line)) {
+                    break;
+                }
 
                 String serverResponse;
                 while((serverResponse = in.readLine()) != null) {
