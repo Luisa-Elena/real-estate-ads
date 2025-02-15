@@ -4,11 +4,37 @@
 Multithreaded Java server, which supports multiple clients to view all ads, search for a particular ad form the list or add a new one.
 
 
+
 ## **Installation**
-1. git clone
-2. navigate to java folder
-3. compile?
-4. run server and client, server first
+1. Navigate to the directory where you want to clone the project.  
+In your terminal, type:  
+```sh
+cd path/to/your/directory
+```
+2. Clone the project using:  
+```sh
+git clone "https://github.com/Luisa-Elena/real-estate-ads.git"
+```
+3. Navigate to the folder "java"
+```sh
+cd real-estate-ads/src/main/java
+```
+4. Compile the Server class:
+```sh
+javac -d . org/example/Server.java
+```
+5. Compile the Client class
+```sh
+javac -d . org/example/Client.java
+```
+6. Run the server first, then the clients, each in a separate terminal window, still from the "java" folder:
+```sh
+java org.example.Server
+```  
+```sh
+java org.example.Client
+```
+
 
 ## **Usage**  
 
