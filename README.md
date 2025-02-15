@@ -108,24 +108,27 @@ Scanner sc = new Scanner(System.in);
 - This creates an object of the Scanner class which will be used to read input from the user.
 
 ```java
-while (!"EXIT".equals(line)) {
-    line = sc.nextLine();
+while (true) {
+  line = sc.nextLine();
+  out.println(line);
 
-    out.println(line);
+  if("EXIT".equals(line)) {
+      break;
+  }
 
-    String serverResponse;
-    while ((serverResponse = in.readLine()) != null) {
-        System.out.println(serverResponse);
-        if (!in.ready()) break;
-    }
+  String serverResponse;
+  while((serverResponse = in.readLine()) != null) {
+    System.out.println(serverResponse);
+    if(!in.ready()) break;
+  }
 }
 ```
-- In a while loop, we read input from the user (stored in the line variable), until the user sends "EXIT".
-- The user input is read in the line variable, then sent to the server.
+- In a while loop, we read input from the user, until the user sends "EXIT".
+- The user input is read in the "line" variable, then sent to the server.
 - After sending a message to the server, we wait for its ressponse.
 - in.readline() reads a full line from the server.
 - in.ready() is used to check if there is any more data available to be read from the server (useful when the server sends multiple lines in a response, since we read only one line at a time).
-- If the user sends "EXIT", then the loop finishes and the client connection is closed. We manully close the scanner object. The socket, in and out will be automatically closed since the socket was created in a try-with-resources statement and the code will go out of the try block.
+- If the user sends "EXIT", then the loop finishes and the client connection is closed. All resources are closed as well. The socket, in and out will be automatically closed since the socket was created in a try-with-resources statement and the code will go out of the try block.
 
 
 ## *Server*
