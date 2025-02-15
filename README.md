@@ -217,3 +217,4 @@ __4. Close the resources__
 
 
 ## **Usage example**
+![Image](https://github.com/user-attachments/assets/1d88b7eb-6584-4fdd-a5bd-c3ba3c381e03)
