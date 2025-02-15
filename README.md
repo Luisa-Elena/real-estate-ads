@@ -55,7 +55,8 @@ On a client terminal, the possible commands are the following:
 - Displays all available ads.  
 
 #### **GET-BY-ID** `<index>`  
-- Retrieves a specific ad from the list at the given index.  
+- Retrieves a specific ad from the list at the given index.
+- Indexing starts from 0.
 
 
 ## **Implementation details**
@@ -204,7 +205,7 @@ while ((line = in.readLine()) != null) {
 
 __3. Implement the logic for each command case:__  
 __EXIT__ - Print a message to inform that the client has disconnected.  
-__ADD__ - Construct a new Ad object with the arguments and add it to the list of ads.
+__ADD__ - Construct a new Ad object with the arguments and add it to the list of ads.  
 __GET-BY-ID__ - Get the ad at a specific index specified as argument for this command.  
 __GET-ALL__ - Get all ads from the list.  
 __default__ - Send to the client an "Invalid command" message.
@@ -212,3 +213,8 @@ __default__ - Send to the client an "Invalid command" message.
 __4. Close the resources__
 - If the client exits and closes its socket, a null will be transmitted. This will lead to the finally block to be executed, where all resources are closed (in, out and clientSocket will also be closed on the server side)
 - If the client is forcibly ended (by pressing ctrl+C in the client terminal), an IOException will be caught and handled in the catch block
+
+
+
+## **Usage example**
+![Image](https://github.com/user-attachments/assets/1d88b7eb-6584-4fdd-a5bd-c3ba3c381e03)
