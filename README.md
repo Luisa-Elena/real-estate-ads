@@ -205,7 +205,7 @@ while ((line = in.readLine()) != null) {
 
 __3. Implement the logic for each command case:__  
 __EXIT__ - Print a message to inform that the client has disconnected.  
-__ADD__ - Construct a new Ad object with the arguments and add it to the list of ads.
+__ADD__ - Construct a new Ad object with the arguments and add it to the list of ads.  
 __GET-BY-ID__ - Get the ad at a specific index specified as argument for this command.  
 __GET-ALL__ - Get all ads from the list.  
 __default__ - Send to the client an "Invalid command" message.
