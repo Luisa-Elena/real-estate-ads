@@ -19,7 +19,7 @@ class Client {
                 line = sc.nextLine();
                 out.println(line);
 
-                if("EXIT".equals(line)) {
+                if("EXIT".equalsIgnoreCase(line)) {
                     break;
                 }
 

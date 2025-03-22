@@ -1,6 +1,6 @@
 package org.example;
 
-public class Ad {
+public abstract class Ad {
     private String description;
     private String location;
     private int price;
@@ -11,8 +11,10 @@ public class Ad {
         this.price = price;
     }
 
+    public abstract String getType();
+
     @Override
     public String toString() {
-        return "{description: " + this.description + ", location: " + this.location + ", price: " + this.price + "}";
+        return "type: " + getType() + ", description: " + this.description + ", location: " + this.location + ", price: " + this.price;
     }
 }

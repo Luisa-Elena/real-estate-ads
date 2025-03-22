@@ -3,9 +3,10 @@ package org.example;
 import java.io.*;
 import java.net.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class Server {
-    public static ConcurrentHashMap<Integer, Ad> ads = new ConcurrentHashMap<>();
+    public static volatile ConcurrentHashMap<Integer, Ad> ads = new ConcurrentHashMap<>();
 
     public static void main(String[] args)
     {
