@@ -5,17 +5,32 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Arrays;
+import java.util.List;
 
+/**
+ * The {@code ClientHandler} class handles client requests in a separate thread.
+ * It processes commands received from the client and sends appropriate responses.
+ */
 class ClientHandler implements Runnable {
     private final Socket clientSocket;
     private final CommandRegistry commandRegistry;
 
+    /**
+     * Constructs a {@code ClientHandler} with the specified client socket.
+     *
+     * @param socket The client socket.
+     */
     public ClientHandler(Socket socket)
     {
         this.clientSocket = socket;
         this.commandRegistry = CommandRegistry.getInstance();
     }
 
+    /**
+     * Runs the client handler, processing input from the client and executing commands.
+     * It listens for client messages, looks up corresponding commands, and executes them.
+     */
     public void run()
     {
         PrintWriter out = null;
@@ -34,7 +49,9 @@ class ClientHandler implements Runnable {
                 if(command == null) {
                     out.println("Invalid command.");
                 } else {
-                    command.execute(parts, out, clientSocket, Server.ads);
+                    // String[] arguments = (parts.length > 1) ? Arrays.copyOfRange(parts, 1, parts.length) : new String[0]; // Drop parts[0]
+                    CommandParams params = new CommandParams(parts, out, clientSocket, Server.ads);
+                    command.execute(params);
                 }
             }
         }
