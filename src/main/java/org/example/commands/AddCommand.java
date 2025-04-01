@@ -1,8 +1,9 @@
-package org.example;
+package org.example.commands;
+
+import org.example.registries.AdRegistry;
+import org.example.models.Ad;
 
 import java.io.PrintWriter;
-import java.net.Socket;
-import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 /**
  * The {@code AddCommand} class implements the {@code Command} interface

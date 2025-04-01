@@ -1,7 +1,10 @@
-package org.example;
+package org.example.commands;
+
+import org.example.commands.Command;
+import org.example.commands.CommandParams;
+import org.example.models.Ad;
 
 import java.io.PrintWriter;
-import java.net.Socket;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**

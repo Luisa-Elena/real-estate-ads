@@ -1,4 +1,6 @@
-package org.example;
+package org.example.models;
+
+import org.example.models.Ad;
 
 /**
  * The {@code RealEstateAd} class represents an advertisement for real estate properties.

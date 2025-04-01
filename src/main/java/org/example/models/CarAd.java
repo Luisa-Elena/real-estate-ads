@@ -1,4 +1,6 @@
-package org.example;
+package org.example.models;
+
+import org.example.models.Ad;
 
 /**
  * The {@code CarAd} class represents an advertisement for a car.

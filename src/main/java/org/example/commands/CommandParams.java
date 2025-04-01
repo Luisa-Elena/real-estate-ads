@@ -1,4 +1,6 @@
-package org.example;
+package org.example.commands;
+
+import org.example.models.Ad;
 
 import java.io.PrintWriter;
 import java.net.Socket;

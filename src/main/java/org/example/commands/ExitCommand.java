@@ -1,8 +1,9 @@
-package org.example;
+package org.example.commands;
 
-import java.io.PrintWriter;
+import org.example.commands.Command;
+import org.example.commands.CommandParams;
+
 import java.net.Socket;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * The {@code ExitCommand} class implements the {@code Command} interface

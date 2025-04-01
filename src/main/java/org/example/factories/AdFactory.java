@@ -1,7 +1,8 @@
-package org.example;
+package org.example.factories;
+
+import org.example.models.Ad;
 
 import java.io.PrintWriter;
-import java.util.List;
 
 /**
  * The {@code AdFactory} interface defines a contract for creating advertisements.

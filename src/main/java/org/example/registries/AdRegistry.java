@@ -1,4 +1,8 @@
-package org.example;
+package org.example.registries;
+
+import org.example.factories.AdFactory;
+import org.example.factories.CarAdFactory;
+import org.example.factories.RealEstateAdFactory;
 
 import java.util.HashMap;
 import java.util.Map;

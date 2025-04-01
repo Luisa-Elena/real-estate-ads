@@ -1,9 +1,10 @@
-package org.example;
+package org.example.server;
+
+import org.example.models.Ad;
 
 import java.io.*;
 import java.net.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * The {@code Server} class represents a multithreaded server application

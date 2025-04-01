@@ -1,4 +1,6 @@
-package org.example;
+package org.example.registries;
+
+import org.example.commands.*;
 
 import java.util.HashMap;
 import java.util.Map;

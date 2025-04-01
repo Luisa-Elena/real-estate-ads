@@ -1,12 +1,14 @@
-package org.example;
+package org.example.server;
+
+import org.example.commands.Command;
+import org.example.commands.CommandParams;
+import org.example.registries.CommandRegistry;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * The {@code ClientHandler} class handles client requests in a separate thread.
@@ -49,7 +51,6 @@ class ClientHandler implements Runnable {
                 if(command == null) {
                     out.println("Invalid command.");
                 } else {
-                    // String[] arguments = (parts.length > 1) ? Arrays.copyOfRange(parts, 1, parts.length) : new String[0]; // Drop parts[0]
                     CommandParams params = new CommandParams(parts, out, clientSocket, Server.ads);
                     command.execute(params);
                 }

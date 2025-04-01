@@ -1,4 +1,7 @@
-package org.example;
+package org.example.factories;
+
+import org.example.factories.AdFactory;
+import org.example.models.RealEstateAd;
 
 import java.io.PrintWriter;
 

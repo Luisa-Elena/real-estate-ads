@@ -1,4 +1,4 @@
-package org.example;
+package org.example.models;
 
 /**
  * The {@code Ad} class is an abstract representation of an advertisement.

@@ -1,7 +1,10 @@
-package org.example;
+package org.example.factories;
+
+import org.example.factories.AdFactory;
+import org.example.models.Ad;
+import org.example.models.CarAd;
 
 import java.io.PrintWriter;
-import java.util.List;
 
 /**
  * The {@code CarAdFactory} class is responsible for creating instances of {@code CarAd}.
