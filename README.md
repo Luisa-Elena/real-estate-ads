@@ -25,15 +25,15 @@ mkdir -p bin
 ```
 5. Compile all java files
 ```sh
-javac -d bin src/main/java/org/example/*.java
+javac -d bin (Get-ChildItem -Path src/main/java -Recurse -Filter *.java | ForEach-Object { $_.FullName })
 ```
 6. Run the server first:
 ```sh
-java -cp bin org.example.Server
+java -cp bin org.example.server.Server
 ```  
 Then run the clients:
 ```sh
-java -cp bin org.example.Client
+java -cp bin org.example.client.Client
 ```
 
 
@@ -44,12 +44,12 @@ On a client terminal, the possible commands are the following:
 #### **EXIT**  
 - Closes the connection with the server.  
 
-#### **ADD** `<description> <location> <price>`  
+#### **ADD** `car <description> <location> <price> <brand>`   
+#### **ADD** `real-estate <description> <location> <price> <surface>` 
 - Adds a new advertisement characterized by the given arguments:  
 - **Important:**  
   - Arguments must be separated by spaces.  
-  - Arguments **cannot** contain spaces (short, one word description and location for easy and quick testing).  
-  - `price` must be a valid integer value.  
+  - Arguments **cannot** contain spaces (short, one word - for easy and quick testing).
 
 #### **GET-ALL**  
 - Displays all available ads.  
@@ -194,18 +194,26 @@ __2. In a loop, read lines from the client, and parse them to interpret the comm
 
 ```java
 while ((line = in.readLine()) != null) {
-    String parts[] = line.split(" ");
-    switch (parts[0]) {
-    // specific logic for each command case
-    }
+  String parts[] = line.split(" ");
+  String action = parts[0].toUpperCase();
+
+  Command command = commandRegistry.getCommand(action);
+  if(command == null) {
+    out.println("Invalid command.");
+  } else {
+     CommandParams params = new CommandParams(parts, out, clientSocket, Server.ads);
+     command.execute(params);
+  }
 }
 ```
 - parts[] will store the splitted input line based on spaces.
-- parts[0] will store the command, and the rest of the elements will be the arguments for that command.
+- parts[0] will store the command action, and the rest of the elements will be the arguments for that command.
+- Use the command registry which maps each action with the corresponding command, then execute the command.
 
 __3. Implement the logic for each command case:__  
 __EXIT__ - Print a message to inform that the client has disconnected.  
-__ADD__ - Construct a new Ad object with the arguments and add it to the list of ads.  
+__ADD__ - Construct a new Ad object with the given arguments and add it to the list of ads.  
+        - Use the ad registry to get the corresponding ad factory for the specified ad type.  
 __GET-BY-ID__ - Get the ad at a specific index specified as argument for this command.  
 __GET-ALL__ - Get all ads from the list.  
 __default__ - Send to the client an "Invalid command" message.
