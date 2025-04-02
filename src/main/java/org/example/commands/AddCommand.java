@@ -1,5 +1,6 @@
 package org.example.commands;
 
+import org.example.factories.AdFactory;
 import org.example.registries.AdRegistry;
 import org.example.models.Ad;
 
@@ -26,13 +27,17 @@ public class AddCommand implements Command {
         ConcurrentHashMap<Integer, Ad> ads = commandParams.getAds();
 
         String adType = args[1].toUpperCase();
-        Ad newAd = AdRegistry.getInstance().getAdFactory(adType).createAd(args, out);
-
-        if(newAd != null) {
-            ads.compute(ads.size(), (key, value) -> newAd);
-            out.println("New add inserted. --> " + newAd.toString());
+        AdFactory adFactory = AdRegistry.getInstance().getAdFactory(adType);
+        if(adFactory != null) {
+            Ad newAd = adFactory.createAd(args, out);
+            if(newAd != null) {
+                ads.compute(ads.size(), (key, value) -> newAd);
+                out.println("New add inserted. --> " + newAd.toString());
+            } else {
+                out.println("Could not insert new add.");
+            }
         } else {
-            out.println("Could not insert new add.");
+            out.println("Invalid ad type.");
         }
     }
 }

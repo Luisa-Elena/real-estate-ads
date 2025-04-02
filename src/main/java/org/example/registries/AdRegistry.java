@@ -37,7 +37,7 @@ public class AdRegistry {
     }
 
     /**
-     * Initializes the registry with predefined advertisement factories.
+     * Initializes the registry with the corresponding advertisement factories for each ad type.
      */
     private void initializeAds() {
         adMap.put("REAL-ESTATE", new RealEstateAdFactory());

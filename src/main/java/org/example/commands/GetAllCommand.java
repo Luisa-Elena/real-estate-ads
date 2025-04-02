@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * The {@code GetAllCommand} class implements the {@code Command} interface
- * and handles retrieving all advertisements stored in the system.
+ * and handles retrieving all advertisements stored in the shared advertisements map.
  */
 public class GetAllCommand implements Command {
 

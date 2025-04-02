@@ -26,7 +26,7 @@ public class CarAdFactory implements AdFactory {
                 int price = Integer.parseInt(args[4]);
                 return new CarAd(args[2], args[3], price, args[5]);
             } catch (NumberFormatException e) {
-                out.println("Invalid integer value for price: " + args[3]);
+                out.println("Invalid integer value for price: " + args[4]);
             }
         } else {
             out.println("Invalid number of arguments for the <ADD car> command.");
